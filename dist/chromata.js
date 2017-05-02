@@ -21,6 +21,7 @@ var Chromata = (function () {
 
     this.options = this._mergeOptions(options);
 
+    image.crossOrigin = "anonymous";
     image.src = imageElement.src;
     image.addEventListener("load", function () {
       dimensions = Utils._getOutputDimensions(imageElement, _this.options.outputSize);
@@ -772,7 +773,11 @@ var PathRenderer = (function () {
     },
     _drawLineSmooth: {
       value: function DrawLineSmooth() {
-        var midX, midY, midColor, lineLength, nextPoint = this.pathFinder.getNextPoint(this.context);
+        var midX,
+            midY,
+            midColor,
+            lineLength,
+            nextPoint = this.pathFinder.getNextPoint(this.context);
 
         if (nextPoint) {
           if (typeof this.currentPoint === "undefined") {
@@ -814,7 +819,8 @@ var PathRenderer = (function () {
     },
     _drawLineSquare: {
       value: function DrawLineSquare() {
-        var lineLength, nextPoint = this.pathFinder.getNextPoint(this.context);
+        var lineLength,
+            nextPoint = this.pathFinder.getNextPoint(this.context);
 
         if (nextPoint) {
           if (typeof this.currentPoint === "undefined") {
@@ -848,7 +854,8 @@ var PathRenderer = (function () {
     },
     _drawPoint: {
       value: function DrawPoint() {
-        var lineLength, nextPoint = this.pathFinder.getNextPoint(this.context);
+        var lineLength,
+            nextPoint = this.pathFinder.getNextPoint(this.context);
 
         if (nextPoint) {
           if (typeof this.currentPoint === "undefined") {

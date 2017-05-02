@@ -16,6 +16,7 @@ export default class Chromata {
 
         this.options = this._mergeOptions(options);
 
+        image.crossOrigin = 'anonymous';
         image.src = imageElement.src;
         image.addEventListener('load', () => {
             dimensions = Utils._getOutputDimensions(imageElement, this.options.outputSize);
